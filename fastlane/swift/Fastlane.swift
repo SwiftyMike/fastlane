@@ -1111,7 +1111,7 @@ public func backupXcarchive(xcarchive: String,
  Automatically add a badge to your app icon
 
  - parameters:
-   - dark: Adds a dark flavored badge ontop of your icon
+   - dark: Adds a dark flavored badge on top of your icon
    - custom: Add your custom overlay/badge image
    - noBadge: Hides the beta badge
    - shield: Add a shield to your app icon from shields.io
@@ -5110,7 +5110,7 @@ public func getPushCertificate(platform: String = "ios",
  Get the version number of your project
 
  - parameters:
-   - xcodeproj: Path to the Xcode project to read version number from, or its containing directory, optional. If ommitted, or if a directory is passed instead, it will use the first Xcode project found within the given directory, or the project root directory if none is passed
+   - xcodeproj: Path to the Xcode project to read version number from, or its containing directory, optional. If omitted, or if a directory is passed instead, it will use the first Xcode project found within the given directory, or the project root directory if none is passed
    - target: Target name, optional. Will be needed if you have more than one non-test target to avoid being prompted to select one
    - configuration: Configuration name, optional. Will be needed if you have altered the configurations from the default or your version number depends on the configuration selected
 
@@ -6643,7 +6643,7 @@ public func makeChangelogFromJenkins(fallbackChangelog: String = "",
    - force: Renew the provisioning profiles every time you run match
    - forceForNewDevices: Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'
    - includeAllCertificates: Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type
-   - forceForNewCertificates: Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
+   - forceForNewCertificates: Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
    - skipConfirmation: Disables confirmation prompts during nuke, answering them with yes
    - safeRemoveCerts: Remove certs from repository during nuke without revoking them on the developer portal
    - skipDocs: Skip generation of a README.md for the created git repository
@@ -6846,7 +6846,7 @@ public func match(type: String = matchfile.type,
    - force: Renew the provisioning profiles every time you run match
    - forceForNewDevices: Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'
    - includeAllCertificates: Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type
-   - forceForNewCertificates: Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
+   - forceForNewCertificates: Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
    - skipConfirmation: Disables confirmation prompts during nuke, answering them with yes
    - safeRemoveCerts: Remove certs from repository during nuke without revoking them on the developer portal
    - skipDocs: Skip generation of a README.md for the created git repository
@@ -8240,7 +8240,7 @@ public func puts(message: OptionalConfigValue<String?> = .fastlaneDefault(nil)) 
  This can be useful when basing your release process on the version string only stored in one place - in the podspec.
  As one of the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).
  */
-@discardableResult public func readPodspec(path: String) -> [String: String] {
+@discardableResult public func readPodspec(path: String) -> [String: Any] {
     let pathArg = RubyCommand.Argument(name: "path", value: path, type: nil)
     let array: [RubyCommand.Argument?] = [pathArg]
     let args: [RubyCommand.Argument] = array
@@ -11036,7 +11036,7 @@ public func swiftlint(mode: String = "lint",
    - force: Renew the provisioning profiles every time you run match
    - forceForNewDevices: Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'
    - includeAllCertificates: Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type
-   - forceForNewCertificates: Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
+   - forceForNewCertificates: Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'
    - skipConfirmation: Disables confirmation prompts during nuke, answering them with yes
    - safeRemoveCerts: Remove certs from repository during nuke without revoking them on the developer portal
    - skipDocs: Skip generation of a README.md for the created git repository
@@ -11464,7 +11464,7 @@ public func testflight(apiKeyPath: OptionalConfigValue<String?> = .fastlaneDefau
  - parameters:
    - path: Path to the directory that should be converted
    - extension: The extension for the newly created file. Usually .xml or .junit
-   - outputDirectory: Directoy in which the xml files should be written to. Same directory as source by default
+   - outputDirectory: Directory in which the xml files should be written to. Same directory as source by default
    - outputFilename: Filename the xml file should be written to. Defaults to name of input file. (Only works if one input file is used)
    - failBuild: Should this step stop the build if the tests fail? Set this to false if you're handling this with a test reporter
    - xcprettyNaming: Produces class name and test name identical to xcpretty naming in junit file
@@ -13430,4 +13430,4 @@ public let snapshotfile: Snapshotfile = .init()
 
 // Please don't remove the lines below
 // They are used to detect outdated files
-// FastlaneRunnerAPIVersion [0.9.151]
+// FastlaneRunnerAPIVersion [0.9.154]
